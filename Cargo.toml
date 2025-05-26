@@ -1,0 +1,34 @@
+[package]
+name = "tree-sitter-imp"
+description = "Parser for the Imp language made for my matura project"
+version = "0.1.0"
+authors = ["Enea Giger"]
+license = "GPLv3"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "imp"]
+categories = ["parser-implementations", "parsing", "text-editors"]
+repository = "https://github.com/enmiligi/tree-sitter-imp"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = [
+  "bindings/rust/*",
+  "grammar.js",
+  "queries/*",
+  "src/*",
+  "tree-sitter.json",
+  "LICENSE",
+]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.25.4"

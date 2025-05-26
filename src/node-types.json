@@ -1,0 +1,131 @@
+[
+  {
+    "type": "call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "charLiteral",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "char",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stringLiteral",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "char",
+    "named": true
+  },
+  {
+    "type": "floatLiteral",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "intLiteral",
+    "named": true
+  }
+]
