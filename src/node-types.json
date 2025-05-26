@@ -1,6 +1,6 @@
 [
   {
-    "type": "call",
+    "type": "add",
     "named": true,
     "fields": {},
     "children": {
@@ -8,11 +8,23 @@
       "required": true,
       "types": [
         {
+          "type": "add",
+          "named": true
+        },
+        {
           "type": "call",
           "named": true
         },
         {
           "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
           "named": true
         },
         {
@@ -24,11 +36,146 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "intLiteral",
           "named": true
         },
         {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
           "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
           "named": true
         }
       ]
@@ -37,13 +184,1534 @@
   {
     "type": "charLiteral",
     "named": true,
+    "fields": {}
+  },
+  {
+    "type": "divide",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "equals",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if",
+    "named": true,
+    "fields": {
+      "else": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      },
+      "predicate": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lambda",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "lessThan",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "letExpr",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "result": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "letStatement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "moreThan",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "multiply",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "not",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "char",
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "notEquals",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "seq",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
           "named": true
         }
       ]
@@ -56,14 +1724,46 @@
     "fields": {},
     "children": {
       "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "letStatement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stringLiteral",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "subtract",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "add",
+          "named": true
+        },
         {
           "type": "call",
           "named": true
         },
         {
           "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
           "named": true
         },
         {
@@ -75,26 +1775,55 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
           "named": true
         },
         {
           "type": "stringLiteral",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "stringLiteral",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
+        },
         {
-          "type": "char",
+          "type": "subtract",
           "named": true
         }
       ]
@@ -102,6 +1831,14 @@
   },
   {
     "type": "\n",
+    "named": false
+  },
+  {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
     "named": false
   },
   {
@@ -113,8 +1850,68 @@
     "named": false
   },
   {
-    "type": "char",
-    "named": true
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
   },
   {
     "type": "floatLiteral",
@@ -125,7 +1922,27 @@
     "named": true
   },
   {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
     "type": "intLiteral",
     "named": true
+  },
+  {
+    "type": "lambda",
+    "named": false
+  },
+  {
+    "type": "let",
+    "named": false
+  },
+  {
+    "type": "then",
+    "named": false
   }
 ]
