@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "charLiteral",
           "named": true
         },
@@ -100,6 +104,11 @@
     "fields": {}
   },
   {
+    "type": "builtinType",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "call",
     "named": true,
     "fields": {},
@@ -117,6 +126,238 @@
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "boolLiteral",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "case",
+            "named": true
+          },
+          {
+            "type": "charLiteral",
+            "named": true
+          },
+          {
+            "type": "divide",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "floatLiteral",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "intLiteral",
+            "named": true
+          },
+          {
+            "type": "lambda",
+            "named": true
+          },
+          {
+            "type": "lessThan",
+            "named": true
+          },
+          {
+            "type": "letExpr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreThan",
+            "named": true
+          },
+          {
+            "type": "multiply",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "notEquals",
+            "named": true
+          },
+          {
+            "type": "seq",
+            "named": true
+          },
+          {
+            "type": "stringLiteral",
+            "named": true
+          },
+          {
+            "type": "subtract",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "caseBody",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "caseBody",
+    "named": true,
+    "fields": {
+      "captures": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "boolLiteral",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
           "named": true
         },
         {
@@ -225,6 +466,87 @@
     }
   },
   {
+    "type": "constraint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "typeVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constraints",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "builtinType",
+          "named": true
+        },
+        {
+          "type": "constraint",
+          "named": true
+        },
+        {
+          "type": "constructed",
+          "named": true
+        },
+        {
+          "type": "functionType",
+          "named": true
+        },
+        {
+          "type": "typeName",
+          "named": true
+        },
+        {
+          "type": "typeVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constructed",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "builtinType",
+          "named": true
+        },
+        {
+          "type": "constructed",
+          "named": true
+        },
+        {
+          "type": "functionType",
+          "named": true
+        },
+        {
+          "type": "typeName",
+          "named": true
+        },
+        {
+          "type": "typeVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "divide",
     "named": true,
     "fields": {},
@@ -242,6 +564,10 @@
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
           "named": true
         },
         {
@@ -340,6 +666,10 @@
           "named": true
         },
         {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "charLiteral",
           "named": true
         },
@@ -415,6 +745,37 @@
     }
   },
   {
+    "type": "functionType",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "builtinType",
+          "named": true
+        },
+        {
+          "type": "constructed",
+          "named": true
+        },
+        {
+          "type": "functionType",
+          "named": true
+        },
+        {
+          "type": "typeName",
+          "named": true
+        },
+        {
+          "type": "typeVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "if",
     "named": true,
     "fields": {
@@ -440,6 +801,10 @@
           },
           {
             "type": "call",
+            "named": true
+          },
+          {
+            "type": "case",
             "named": true
           },
           {
@@ -541,6 +906,10 @@
             "named": true
           },
           {
+            "type": "case",
+            "named": true
+          },
+          {
             "type": "charLiteral",
             "named": true
           },
@@ -636,6 +1005,10 @@
           },
           {
             "type": "call",
+            "named": true
+          },
+          {
+            "type": "case",
             "named": true
           },
           {
@@ -753,6 +1126,10 @@
             "named": true
           },
           {
+            "type": "case",
+            "named": true
+          },
+          {
             "type": "charLiteral",
             "named": true
           },
@@ -825,6 +1202,36 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "builtinType",
+            "named": true
+          },
+          {
+            "type": "constraints",
+            "named": true
+          },
+          {
+            "type": "constructed",
+            "named": true
+          },
+          {
+            "type": "functionType",
+            "named": true
+          },
+          {
+            "type": "typeName",
+            "named": true
+          },
+          {
+            "type": "typeVar",
+            "named": true
+          }
+        ]
       }
     }
   },
@@ -846,6 +1253,10 @@
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
           "named": true
         },
         {
@@ -962,6 +1373,10 @@
             "named": true
           },
           {
+            "type": "case",
+            "named": true
+          },
+          {
             "type": "charLiteral",
             "named": true
           },
@@ -1035,6 +1450,36 @@
           }
         ]
       },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "builtinType",
+            "named": true
+          },
+          {
+            "type": "constraints",
+            "named": true
+          },
+          {
+            "type": "constructed",
+            "named": true
+          },
+          {
+            "type": "functionType",
+            "named": true
+          },
+          {
+            "type": "typeName",
+            "named": true
+          },
+          {
+            "type": "typeVar",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": true,
         "required": true,
@@ -1057,6 +1502,10 @@
           },
           {
             "type": "call",
+            "named": true
+          },
+          {
+            "type": "case",
             "named": true
           },
           {
@@ -1149,6 +1598,36 @@
           }
         ]
       },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "builtinType",
+            "named": true
+          },
+          {
+            "type": "constraints",
+            "named": true
+          },
+          {
+            "type": "constructed",
+            "named": true
+          },
+          {
+            "type": "functionType",
+            "named": true
+          },
+          {
+            "type": "typeName",
+            "named": true
+          },
+          {
+            "type": "typeVar",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": true,
         "required": true,
@@ -1171,6 +1650,10 @@
           },
           {
             "type": "call",
+            "named": true
+          },
+          {
+            "type": "case",
             "named": true
           },
           {
@@ -1270,6 +1753,10 @@
           "named": true
         },
         {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "charLiteral",
           "named": true
         },
@@ -1362,6 +1849,10 @@
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
           "named": true
         },
         {
@@ -1460,6 +1951,10 @@
           "named": true
         },
         {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "charLiteral",
           "named": true
         },
@@ -1552,6 +2047,10 @@
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
           "named": true
         },
         {
@@ -1650,6 +2149,10 @@
           "named": true
         },
         {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "charLiteral",
           "named": true
         },
@@ -1742,6 +2245,10 @@
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
           "named": true
         },
         {
@@ -1871,6 +2378,10 @@
           "named": true
         },
         {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "charLiteral",
           "named": true
         },
@@ -1990,11 +2501,19 @@
     "named": false
   },
   {
+    "type": "->",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
@@ -2014,11 +2533,35 @@
     "named": false
   },
   {
+    "type": "=>",
+    "named": false
+  },
+  {
     "type": ">",
     "named": false
   },
   {
+    "type": "Bool",
+    "named": false
+  },
+  {
+    "type": "Char",
+    "named": false
+  },
+  {
     "type": "False",
+    "named": false
+  },
+  {
+    "type": "Float",
+    "named": false
+  },
+  {
+    "type": "Int",
+    "named": false
+  },
+  {
+    "type": "Number",
     "named": false
   },
   {
@@ -2031,6 +2574,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "case",
     "named": false
   },
   {
@@ -2070,7 +2617,23 @@
     "named": false
   },
   {
+    "type": "of",
+    "named": false
+  },
+  {
     "type": "then",
+    "named": false
+  },
+  {
+    "type": "typeName",
+    "named": true
+  },
+  {
+    "type": "typeVar",
+    "named": true
+  },
+  {
+    "type": "|",
     "named": false
   }
 ]

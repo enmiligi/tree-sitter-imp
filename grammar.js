@@ -24,7 +24,13 @@ export default grammar({
     _statement: ($) => choice($.letStatement),
 
     letStatement: ($) =>
-      seq("let", field("name", $.identifier), "=", field("value", $._expr)),
+      seq(
+        "let",
+        field("name", $.identifier),
+        optional(seq(":", field("type", $._constrainedType))),
+        "=",
+        field("value", $._expr),
+      ),
 
     _expr: ($) =>
       choice(
@@ -50,6 +56,7 @@ export default grammar({
         $.equals,
         $.notEquals,
         $.seq,
+        $.case,
       ),
 
     not: ($) => seq("!", $._expr),
@@ -74,6 +81,7 @@ export default grammar({
       seq(
         "let",
         field("name", $.identifier),
+        optional(seq(":", field("type", $._constrainedType))),
         "=",
         field("value", $._expr),
         "in",
@@ -84,6 +92,7 @@ export default grammar({
       seq(
         "lambda",
         field("argument", $.identifier),
+        optional(seq(":", field("type", $._constrainedType))),
         ".",
         field("body", $._expr),
       ),
@@ -97,6 +106,19 @@ export default grammar({
         "else",
         field("else", $._expr),
       ),
+
+    case: ($) =>
+      prec.right(
+        seq(
+          "case",
+          field("value", $._expr),
+          "of",
+          $.caseBody,
+          repeat(seq("|", $.caseBody)),
+        ),
+      ),
+    caseBody: ($) =>
+      seq($.identifier, field("captures", repeat($.identifier)), "=>", $._expr),
 
     list: ($) =>
       seq(
@@ -117,6 +139,33 @@ export default grammar({
     char: ($) => choice(/[^\\]/, $.escapeSequence),
 
     identifier: ($) => token(/[A-Za-z]\w*/),
+
+    _constrainedType: ($) => choice($._type, $.constraints),
+
+    constraints: ($) =>
+      seq(
+        $.constraint,
+        repeat(seq(",", $.constraint)),
+        optional(","),
+        "=>",
+        $._type,
+      ),
+    constraint: ($) => seq("Number", $.typeVar),
+
+    _type: ($) =>
+      choice(
+        $.builtinType,
+        $.constructed,
+        $.functionType,
+        $.typeVar,
+        $.typeName,
+      ),
+
+    typeVar: ($) => /[a-z]\w*/,
+    typeName: ($) => /[A-Z]\w*/,
+    builtinType: ($) => choice("Int", "Float", "Char", "Bool"),
+    constructed: ($) => prec.left(100, seq($._type, $._type)),
+    functionType: ($) => prec.right(seq($._type, "->", $._type)),
 
     _SPACE: ($) => token(/([\t\f\v ]+|(\n|\r|\r\n)+[\t\f\v ]+)/),
 
