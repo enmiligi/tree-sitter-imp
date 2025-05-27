@@ -50,6 +50,10 @@
         {
           "type": "SYMBOL",
           "name": "letStatement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typeStatement"
         }
       ]
     },
@@ -106,6 +110,70 @@
           }
         }
       ]
+    },
+    "typeStatement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typeName"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "typeVar"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constructor"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "|"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "constructor"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "constructor": {
+      "type": "PREC",
+      "value": 100,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_constrainedHighPrecedenceType"
+            }
+          }
+        ]
+      }
     },
     "_expr": {
       "type": "CHOICE",
@@ -833,11 +901,94 @@
         },
         {
           "type": "SYMBOL",
-          "name": "constraints"
+          "name": "_constraints"
         }
       ]
     },
-    "constraints": {
+    "_constrainedHighPrecedenceType": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_highPrecedenceType"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_highPrecedenceConstraints"
+        }
+      ]
+    },
+    "_highPrecedenceConstraints": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "constraint"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "constraint"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "=>"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_highPrecedenceType"
+        }
+      ]
+    },
+    "_highPrecedenceType": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "builtinType"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constructed"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typeVar"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typeName"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_bracketedType"
+        }
+      ]
+    },
+    "_constraints": {
       "type": "SEQ",
       "members": [
         {
@@ -896,27 +1047,52 @@
       ]
     },
     "_type": {
-      "type": "CHOICE",
+      "type": "PREC",
+      "value": 100,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "builtinType"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "constructed"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "functionType"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "typeVar"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "typeName"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_bracketedType"
+          }
+        ]
+      }
+    },
+    "_bracketedType": {
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "builtinType"
+          "type": "STRING",
+          "value": "("
         },
         {
           "type": "SYMBOL",
-          "name": "constructed"
+          "name": "_type"
         },
         {
-          "type": "SYMBOL",
-          "name": "functionType"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "typeVar"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "typeName"
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },

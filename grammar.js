@@ -21,7 +21,7 @@ export default grammar({
         repeat(seq($._newStatement, optional($._statement))),
       ),
 
-    _statement: ($) => choice($.letStatement),
+    _statement: ($) => choice($.letStatement, $.typeStatement),
 
     letStatement: ($) =>
       seq(
@@ -31,6 +31,19 @@ export default grammar({
         "=",
         field("value", $._expr),
       ),
+
+    typeStatement: ($) =>
+      seq(
+        "type",
+        $.typeName,
+        repeat($.typeVar),
+        "=",
+        $.constructor,
+        repeat(seq("|", $.constructor)),
+      ),
+
+    constructor: ($) =>
+      prec(100, seq($.identifier, repeat($._constrainedHighPrecedenceType))),
 
     _expr: ($) =>
       choice(
@@ -145,9 +158,30 @@ export default grammar({
 
     identifier: ($) => token(/[A-Za-z]\w*/),
 
-    _constrainedType: ($) => choice($._type, $.constraints),
+    _constrainedType: ($) => choice($._type, $._constraints),
 
-    constraints: ($) =>
+    _constrainedHighPrecedenceType: ($) =>
+      choice($._highPrecedenceType, $._highPrecedenceConstraints),
+
+    _highPrecedenceConstraints: ($) =>
+      seq(
+        $.constraint,
+        repeat(seq(",", $.constraint)),
+        optional(","),
+        "=>",
+        $._highPrecedenceType,
+      ),
+
+    _highPrecedenceType: ($) =>
+      choice(
+        $.builtinType,
+        $.constructed,
+        $.typeVar,
+        $.typeName,
+        $._bracketedType,
+      ),
+
+    _constraints: ($) =>
       seq(
         $.constraint,
         repeat(seq(",", $.constraint)),
@@ -158,13 +192,19 @@ export default grammar({
     constraint: ($) => seq("Number", $.typeVar),
 
     _type: ($) =>
-      choice(
-        $.builtinType,
-        $.constructed,
-        $.functionType,
-        $.typeVar,
-        $.typeName,
+      prec(
+        100,
+        choice(
+          $.builtinType,
+          $.constructed,
+          $.functionType,
+          $.typeVar,
+          $.typeName,
+          $._bracketedType,
+        ),
       ),
+
+    _bracketedType: ($) => seq("(", $._type, ")"),
 
     typeVar: ($) => /[a-z]\w*/,
     typeName: ($) => /[A-Z]\w*/,

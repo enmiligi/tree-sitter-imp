@@ -491,7 +491,38 @@
     }
   },
   {
-    "type": "constraints",
+    "type": "constructed",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "builtinType",
+          "named": true
+        },
+        {
+          "type": "constructed",
+          "named": true
+        },
+        {
+          "type": "functionType",
+          "named": true
+        },
+        {
+          "type": "typeName",
+          "named": true
+        },
+        {
+          "type": "typeVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "constructor",
     "named": true,
     "fields": {},
     "children": {
@@ -515,34 +546,7 @@
           "named": true
         },
         {
-          "type": "typeName",
-          "named": true
-        },
-        {
-          "type": "typeVar",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "constructed",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "builtinType",
-          "named": true
-        },
-        {
-          "type": "constructed",
-          "named": true
-        },
-        {
-          "type": "functionType",
+          "type": "identifier",
           "named": true
         },
         {
@@ -1214,15 +1218,31 @@
         ]
       },
       "type": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "=>",
+            "named": false
+          },
           {
             "type": "builtinType",
             "named": true
           },
           {
-            "type": "constraints",
+            "type": "constraint",
             "named": true
           },
           {
@@ -1461,15 +1481,31 @@
         ]
       },
       "type": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "=>",
+            "named": false
+          },
           {
             "type": "builtinType",
             "named": true
           },
           {
-            "type": "constraints",
+            "type": "constraint",
             "named": true
           },
           {
@@ -1609,15 +1645,31 @@
         ]
       },
       "type": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "=>",
+            "named": false
+          },
           {
             "type": "builtinType",
             "named": true
           },
           {
-            "type": "constraints",
+            "type": "constraint",
             "named": true
           },
           {
@@ -2348,6 +2400,10 @@
         {
           "type": "letStatement",
           "named": true
+        },
+        {
+          "type": "typeStatement",
+          "named": true
         }
       ]
     }
@@ -2461,6 +2517,29 @@
         },
         {
           "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typeStatement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constructor",
+          "named": true
+        },
+        {
+          "type": "typeName",
+          "named": true
+        },
+        {
+          "type": "typeVar",
           "named": true
         }
       ]
@@ -2632,6 +2711,10 @@
   },
   {
     "type": "then",
+    "named": false
+  },
+  {
+    "type": "type",
     "named": false
   },
   {
