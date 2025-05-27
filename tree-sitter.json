@@ -6,11 +6,12 @@
       "camelcase": "Imp",
       "title": "Imp",
       "scope": "source.imp",
-      "file-types": [
-        "imp"
-      ],
+      "file-types": ["imp"],
       "injection-regex": "^imp$",
-      "class-name": "TreeSitterImp"
+      "class-name": "TreeSitterImp",
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm",
+      "tags": "queries/tags.scm"
     }
   ],
   "metadata": {

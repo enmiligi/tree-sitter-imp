@@ -31,6 +31,7 @@ export default grammar({
         $.identifier,
         $.intLiteral,
         $.floatLiteral,
+        $.boolLiteral,
         $.charLiteral,
         $.stringLiteral,
         $.call,
@@ -109,10 +110,11 @@ export default grammar({
     intLiteral: ($) => token(/\d+/),
     floatLiteral: ($) => token(/\d+\.\d*/),
 
-    charLiteral: ($) => seq("'", $._char, "'"),
-    stringLiteral: ($) => seq('"', repeat($._char), '"'),
+    charLiteral: ($) => seq("'", $.char, "'"),
+    stringLiteral: ($) => seq('"', repeat($.char), '"'),
 
-    _char: ($) => /[^\\]|\\(n|r|t|'|"|\\)/,
+    escapeSequence: ($) => /\\(n|r|t|'|"|\\)/,
+    char: ($) => choice(/[^\\]/, $.escapeSequence),
 
     identifier: ($) => token(/[A-Za-z]\w*/),
 

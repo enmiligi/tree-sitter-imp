@@ -99,6 +99,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "boolLiteral"
+        },
+        {
+          "type": "SYMBOL",
           "name": "charLiteral"
         },
         {
@@ -612,7 +616,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_char"
+          "name": "char"
         },
         {
           "type": "STRING",
@@ -631,7 +635,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_char"
+            "name": "char"
           }
         },
         {
@@ -640,9 +644,22 @@
         }
       ]
     },
-    "_char": {
+    "escapeSequence": {
       "type": "PATTERN",
-      "value": "[^\\\\]|\\\\(n|r|t|'|\"|\\\\)"
+      "value": "\\\\(n|r|t|'|\"|\\\\)"
+    },
+    "char": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[^\\\\]"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "escapeSequence"
+        }
+      ]
     },
     "identifier": {
       "type": "TOKEN",
