@@ -118,7 +118,7 @@ export default grammar({
 
     identifier: ($) => token(/[A-Za-z]\w*/),
 
-    _SPACE: ($) => token(/([\t\f\v ]+|(\n|\r|\r\n)[\t\f\v ]+)/),
+    _SPACE: ($) => token(/([\t\f\v ]+|(\n|\r|\r\n)+[\t\f\v ]+)/),
 
     _newStatement: ($) => token("\n"),
   },

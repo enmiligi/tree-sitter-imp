@@ -672,7 +672,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "([\\t\\f\\v ]+|(\\n|\\r|\\r\\n)[\\t\\f\\v ]+)"
+        "value": "([\\t\\f\\v ]+|[\\t\\f\\v ]*(\\n|\\r|\\r\\n)+[\\t\\f\\v ]+)"
       }
     },
     "_newStatement": {
