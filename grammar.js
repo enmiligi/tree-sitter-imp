@@ -118,7 +118,12 @@ export default grammar({
         ),
       ),
     caseBody: ($) =>
-      seq($.identifier, field("captures", repeat($.identifier)), "=>", $._expr),
+      seq(
+        field("constructor", $.identifier),
+        field("captures", repeat($.identifier)),
+        "=>",
+        $._expr,
+      ),
 
     list: ($) =>
       seq(
