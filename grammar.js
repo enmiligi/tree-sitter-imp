@@ -43,7 +43,15 @@ export default grammar({
       ),
 
     constructor: ($) =>
-      prec(100, seq($.identifier, repeat($._constrainedHighPrecedenceType))),
+      prec(
+        100,
+        seq(
+          $.identifier,
+          repeat(
+            choice($._bracketedType, $.typeVar, $.typeName, $.builtinType),
+          ),
+        ),
+      ),
 
     _expr: ($) =>
       choice(
@@ -158,30 +166,9 @@ export default grammar({
 
     identifier: ($) => token(/[A-Za-z]\w*/),
 
-    _constrainedType: ($) => choice($._type, $._constraints),
+    _constrainedType: ($) => choice($._type, $.constraints),
 
-    _constrainedHighPrecedenceType: ($) =>
-      choice($._highPrecedenceType, $._highPrecedenceConstraints),
-
-    _highPrecedenceConstraints: ($) =>
-      seq(
-        $.constraint,
-        repeat(seq(",", $.constraint)),
-        optional(","),
-        "=>",
-        $._highPrecedenceType,
-      ),
-
-    _highPrecedenceType: ($) =>
-      choice(
-        $.builtinType,
-        $.constructed,
-        $.typeVar,
-        $.typeName,
-        $._bracketedType,
-      ),
-
-    _constraints: ($) =>
+    constraints: ($) =>
       seq(
         $.constraint,
         repeat(seq(",", $.constraint)),
@@ -192,24 +179,22 @@ export default grammar({
     constraint: ($) => seq("Number", $.typeVar),
 
     _type: ($) =>
-      prec(
-        100,
-        choice(
-          $.builtinType,
-          $.constructed,
-          $.functionType,
-          $.typeVar,
-          $.typeName,
-          $._bracketedType,
-        ),
+      choice(
+        $.builtinType,
+        $.constructed,
+        $.functionType,
+        $.typeVar,
+        $.typeName,
+        $._bracketedType,
       ),
 
     _bracketedType: ($) => seq("(", $._type, ")"),
 
-    typeVar: ($) => /[a-z]\w*/,
-    typeName: ($) => /[A-Z]\w*/,
+    typeVar: ($) => token(/[a-z]\w*/),
+    typeName: ($) => token(/[A-Z]\w*/),
     builtinType: ($) => choice("Int", "Float", "Char", "Bool"),
-    constructed: ($) => prec.left(100, seq($._type, $._type)),
+    constructed: ($) =>
+      prec.left(100, seq(choice($.constructed, $.typeName), $._type)),
     functionType: ($) => prec.right(seq($._type, "->", $._type)),
 
     _SPACE: ($) => token(/([\t\f\v ]+|(\n|\r|\r\n)+[\t\f\v ]+)/),

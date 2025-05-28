@@ -168,8 +168,25 @@
           {
             "type": "REPEAT",
             "content": {
-              "type": "SYMBOL",
-              "name": "_constrainedHighPrecedenceType"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_bracketedType"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "typeVar"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "typeName"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "builtinType"
+                }
+              ]
             }
           }
         ]
@@ -901,94 +918,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_constraints"
+          "name": "constraints"
         }
       ]
     },
-    "_constrainedHighPrecedenceType": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_highPrecedenceType"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_highPrecedenceConstraints"
-        }
-      ]
-    },
-    "_highPrecedenceConstraints": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "constraint"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": ","
-              },
-              {
-                "type": "SYMBOL",
-                "name": "constraint"
-              }
-            ]
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": ","
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "=>"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_highPrecedenceType"
-        }
-      ]
-    },
-    "_highPrecedenceType": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "builtinType"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "constructed"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "typeVar"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "typeName"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_bracketedType"
-        }
-      ]
-    },
-    "_constraints": {
+    "constraints": {
       "type": "SEQ",
       "members": [
         {
@@ -1047,37 +981,33 @@
       ]
     },
     "_type": {
-      "type": "PREC",
-      "value": 100,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "builtinType"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "constructed"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "functionType"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "typeVar"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "typeName"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_bracketedType"
-          }
-        ]
-      }
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "builtinType"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constructed"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "functionType"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typeVar"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "typeName"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_bracketedType"
+        }
+      ]
     },
     "_bracketedType": {
       "type": "SEQ",
@@ -1097,12 +1027,18 @@
       ]
     },
     "typeVar": {
-      "type": "PATTERN",
-      "value": "[a-z]\\w*"
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[a-z]\\w*"
+      }
     },
     "typeName": {
-      "type": "PATTERN",
-      "value": "[A-Z]\\w*"
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[A-Z]\\w*"
+      }
     },
     "builtinType": {
       "type": "CHOICE",
@@ -1132,8 +1068,17 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "_type"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "constructed"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "typeName"
+              }
+            ]
           },
           {
             "type": "SYMBOL",

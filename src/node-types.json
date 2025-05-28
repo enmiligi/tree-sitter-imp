@@ -491,6 +491,41 @@
     }
   },
   {
+    "type": "constraints",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "builtinType",
+          "named": true
+        },
+        {
+          "type": "constraint",
+          "named": true
+        },
+        {
+          "type": "constructed",
+          "named": true
+        },
+        {
+          "type": "functionType",
+          "named": true
+        },
+        {
+          "type": "typeName",
+          "named": true
+        },
+        {
+          "type": "typeVar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "constructed",
     "named": true,
     "fields": {},
@@ -531,10 +566,6 @@
       "types": [
         {
           "type": "builtinType",
-          "named": true
-        },
-        {
-          "type": "constraint",
           "named": true
         },
         {
@@ -1230,19 +1261,11 @@
             "named": false
           },
           {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "=>",
-            "named": false
-          },
-          {
             "type": "builtinType",
             "named": true
           },
           {
-            "type": "constraint",
+            "type": "constraints",
             "named": true
           },
           {
@@ -1493,19 +1516,11 @@
             "named": false
           },
           {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "=>",
-            "named": false
-          },
-          {
             "type": "builtinType",
             "named": true
           },
           {
-            "type": "constraint",
+            "type": "constraints",
             "named": true
           },
           {
@@ -1657,19 +1672,11 @@
             "named": false
           },
           {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "=>",
-            "named": false
-          },
-          {
             "type": "builtinType",
             "named": true
           },
           {
-            "type": "constraint",
+            "type": "constraints",
             "named": true
           },
           {
