@@ -11,6 +11,7 @@ export default grammar({
   name: "imp",
 
   extras: ($) => [$._SPACE, $.comment],
+  externals: ($) => [$.escapechar, $.stringchar, $.char, $.comment, $.error],
 
   word: ($) => $.identifier,
 
@@ -53,7 +54,9 @@ export default grammar({
         ),
       ),
 
-    _expr: ($) =>
+    _expr: ($) => prec(1000, choice($.negate, $._nonNegateExpr)),
+
+    _nonNegateExpr: ($) =>
       choice(
         $.identifier,
         $.intLiteral,
@@ -80,9 +83,12 @@ export default grammar({
         $.case,
         $.or,
         $.and,
+        $.exponentiate,
+        $.negate,
       ),
 
     not: ($) => seq("!", $._expr),
+    negate: ($) => seq("-", $._expr),
 
     seq: ($) => prec.left(10, seq($._expr, ";", $._expr)),
 
@@ -99,7 +105,9 @@ export default grammar({
     multiply: ($) => prec.left(60, seq($._expr, "*", $._expr)),
     divide: ($) => prec.left(60, seq($._expr, "/", $._expr)),
 
-    call: ($) => prec.left(100, seq($._expr, $._expr)),
+    exponentiate: ($) => prec.right(70, seq($._expr, "^", $._expr)),
+
+    call: ($) => prec.left(100, seq($._nonNegateExpr, $._nonNegateExpr)),
 
     _parenExpr: ($) => seq("(", $._expr, ")"),
 
@@ -163,11 +171,9 @@ export default grammar({
     intLiteral: ($) => token(/\d+/),
     floatLiteral: ($) => token(/\d+\.\d*/),
 
-    charLiteral: ($) => seq("'", choice(/[^\\]/, $.escapeSequence), "'"),
+    charLiteral: ($) => seq("'", choice($.char, $.escapechar), "'"),
     stringLiteral: ($) =>
-      seq('"', repeat(choice(/[^\\"]/, $.escapeSequence)), '"'),
-
-    escapeSequence: ($) => /\\(n|r|t|'|"|\\)/,
+      seq('"', repeat(choice($.stringchar, $.escapechar)), '"'),
 
     identifier: ($) => token(/[A-Za-z]\w*/),
 
@@ -201,7 +207,6 @@ export default grammar({
     constructed: ($) =>
       prec.left(100, seq(choice($.constructed, $.typeName), $._type)),
     functionType: ($) => prec.right(seq($._type, "->", $._type)),
-    comment: ($) => seq(/#/, /[^\r\n]*/),
     _SPACE: ($) => /(\n|\r|\r\n)*[\t\f\v ]+/,
     _newStatement: ($) => token("\n"),
   },
