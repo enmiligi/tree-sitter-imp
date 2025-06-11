@@ -163,11 +163,11 @@ export default grammar({
     intLiteral: ($) => token(/\d+/),
     floatLiteral: ($) => token(/\d+\.\d*/),
 
-    charLiteral: ($) => seq("'", $.char, "'"),
-    stringLiteral: ($) => seq('"', repeat($.char), '"'),
+    charLiteral: ($) => seq("'", choice(/[^\\]/, $.escapeSequence), "'"),
+    stringLiteral: ($) =>
+      seq('"', repeat(choice(/[^\\"]/, $.escapeSequence)), '"'),
 
     escapeSequence: ($) => /\\(n|r|t|'|"|\\)/,
-    char: ($) => choice(/[^\\]/, $.escapeSequence),
 
     identifier: ($) => token(/[A-Za-z]\w*/),
 
@@ -201,8 +201,8 @@ export default grammar({
     constructed: ($) =>
       prec.left(100, seq(choice($.constructed, $.typeName), $._type)),
     functionType: ($) => prec.right(seq($._type, "->", $._type)),
-    comment: ($) => token(/(\n|\r|\r\n)?#[^\r\n]*/),
-    _SPACE: ($) => token(/(\n|\r|\r\n)*[\t\f\v ]+/),
+    comment: ($) => seq(/#/, /[^\r\n]*/),
+    _SPACE: ($) => /(\n|\r|\r\n)*[\t\f\v ]+/,
     _newStatement: ($) => token("\n"),
   },
 });

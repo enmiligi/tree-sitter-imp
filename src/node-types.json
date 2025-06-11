@@ -585,7 +585,7 @@
     }
   },
   {
-    "type": "char",
+    "type": "charLiteral",
     "named": true,
     "fields": {},
     "children": {
@@ -600,19 +600,9 @@
     }
   },
   {
-    "type": "charLiteral",
+    "type": "comment",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "char",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "constraint",
@@ -2798,7 +2788,7 @@
       "required": false,
       "types": [
         {
-          "type": "char",
+          "type": "escapeSequence",
           "named": true
         }
       ]
@@ -3061,11 +3051,6 @@
   {
     "type": "case",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true,
-    "extra": true
   },
   {
     "type": "else",

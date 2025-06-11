@@ -906,8 +906,17 @@
           "value": "'"
         },
         {
-          "type": "SYMBOL",
-          "name": "char"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^\\\\']"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "escapeSequence"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -925,8 +934,17 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "char"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^\\\\\"]"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "escapeSequence"
+              }
+            ]
           }
         },
         {
@@ -938,19 +956,6 @@
     "escapeSequence": {
       "type": "PATTERN",
       "value": "\\\\(n|r|t|'|\"|\\\\)"
-    },
-    "char": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "PATTERN",
-          "value": "[^\\\\]"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "escapeSequence"
-        }
-      ]
     },
     "identifier": {
       "type": "TOKEN",
@@ -1159,18 +1164,21 @@
       }
     },
     "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "(\\n|\\r|\\r\\n)?#[^\\r\\n]*"
-      }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "#"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\r\\n]*"
+        }
+      ]
     },
     "_SPACE": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "(\\n|\\r|\\r\\n)*[\\t\\f\\v ]+"
-      }
+      "type": "PATTERN",
+      "value": "(\\n|\\r|\\r\\n)*[\\t\\f\\v ]+"
     },
     "_newStatement": {
       "type": "TOKEN",
