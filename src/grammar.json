@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "imp",
   "word": "identifier",
   "rules": {
@@ -1157,11 +1158,18 @@
         ]
       }
     },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "(\\n|\\r|\\r\\n)?#[^\\r\\n]*"
+      }
+    },
     "_SPACE": {
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "([\\t\\f\\v ]+|(\\n|\\r|\\r\\n)+[\\t\\f\\v ]+)"
+        "value": "(\\n|\\r|\\r\\n)*[\\t\\f\\v ]+"
       }
     },
     "_newStatement": {
@@ -1176,11 +1184,16 @@
     {
       "type": "SYMBOL",
       "name": "_SPACE"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }

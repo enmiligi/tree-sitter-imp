@@ -10,7 +10,7 @@
 export default grammar({
   name: "imp",
 
-  extras: ($) => [$._SPACE],
+  extras: ($) => [$._SPACE, $.comment],
 
   word: ($) => $.identifier,
 
@@ -201,9 +201,8 @@ export default grammar({
     constructed: ($) =>
       prec.left(100, seq(choice($.constructed, $.typeName), $._type)),
     functionType: ($) => prec.right(seq($._type, "->", $._type)),
-
-    _SPACE: ($) => token(/([\t\f\v ]+|(\n|\r|\r\n)+[\t\f\v ]+)/),
-
+    comment: ($) => token(/(\n|\r|\r\n)?#[^\r\n]*/),
+    _SPACE: ($) => token(/(\n|\r|\r\n)*[\t\f\v ]+/),
     _newStatement: ($) => token("\n"),
   },
 });
