@@ -193,21 +193,17 @@
       }
     },
     "_expr": {
-      "type": "PREC",
-      "value": 1000,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "negate"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_nonNegateExpr"
-          }
-        ]
-      }
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "negate"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_nonNegateExpr"
+        }
+      ]
     },
     "_nonNegateExpr": {
       "type": "CHOICE",
@@ -315,10 +311,6 @@
         {
           "type": "SYMBOL",
           "name": "exponentiate"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "negate"
         }
       ]
     },

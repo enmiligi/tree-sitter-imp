@@ -54,7 +54,7 @@ export default grammar({
         ),
       ),
 
-    _expr: ($) => prec(1000, choice($.negate, $._nonNegateExpr)),
+    _expr: ($) => choice($.negate, $._nonNegateExpr),
 
     _nonNegateExpr: ($) =>
       choice(
@@ -84,7 +84,6 @@ export default grammar({
         $.or,
         $.and,
         $.exponentiate,
-        $.negate,
       ),
 
     not: ($) => seq("!", $._expr),
