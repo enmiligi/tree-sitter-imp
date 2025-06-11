@@ -1,5 +1,4 @@
 {
-  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "imp",
   "word": "identifier",
   "rules": {
@@ -286,6 +285,14 @@
         {
           "type": "SYMBOL",
           "name": "case"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "or"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "and"
         }
       ]
     },
@@ -302,7 +309,28 @@
         }
       ]
     },
-    "add": {
+    "seq": {
+      "type": "PREC_LEFT",
+      "value": 10,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": ";"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "or": {
       "type": "PREC_LEFT",
       "value": 20,
       "content": {
@@ -314,7 +342,7 @@
           },
           {
             "type": "STRING",
-            "value": "+"
+            "value": "or"
           },
           {
             "type": "SYMBOL",
@@ -323,28 +351,7 @@
         ]
       }
     },
-    "subtract": {
-      "type": "PREC_LEFT",
-      "value": 20,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_expr"
-          },
-          {
-            "type": "STRING",
-            "value": "-"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_expr"
-          }
-        ]
-      }
-    },
-    "multiply": {
+    "and": {
       "type": "PREC_LEFT",
       "value": 30,
       "content": {
@@ -356,28 +363,7 @@
           },
           {
             "type": "STRING",
-            "value": "*"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_expr"
-          }
-        ]
-      }
-    },
-    "divide": {
-      "type": "PREC_LEFT",
-      "value": 30,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_expr"
-          },
-          {
-            "type": "STRING",
-            "value": "/"
+            "value": "and"
           },
           {
             "type": "SYMBOL",
@@ -388,7 +374,7 @@
     },
     "lessThan": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 40,
       "content": {
         "type": "SEQ",
         "members": [
@@ -409,7 +395,7 @@
     },
     "moreThan": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 40,
       "content": {
         "type": "SEQ",
         "members": [
@@ -430,7 +416,7 @@
     },
     "equals": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 40,
       "content": {
         "type": "SEQ",
         "members": [
@@ -451,7 +437,7 @@
     },
     "notEquals": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 40,
       "content": {
         "type": "SEQ",
         "members": [
@@ -470,9 +456,9 @@
         ]
       }
     },
-    "seq": {
+    "add": {
       "type": "PREC_LEFT",
-      "value": 5,
+      "value": 50,
       "content": {
         "type": "SEQ",
         "members": [
@@ -482,7 +468,70 @@
           },
           {
             "type": "STRING",
-            "value": ";"
+            "value": "+"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "subtract": {
+      "type": "PREC_LEFT",
+      "value": 50,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": "-"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "multiply": {
+      "type": "PREC_LEFT",
+      "value": 60,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": "*"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "divide": {
+      "type": "PREC_LEFT",
+      "value": 60,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": "/"
           },
           {
             "type": "SYMBOL",
@@ -1133,6 +1182,5 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": [],
-  "reserved": {}
+  "supertypes": []
 }

@@ -78,21 +78,26 @@ export default grammar({
         $.notEquals,
         $.seq,
         $.case,
+        $.or,
+        $.and,
       ),
 
     not: ($) => seq("!", $._expr),
 
-    add: ($) => prec.left(20, seq($._expr, "+", $._expr)),
-    subtract: ($) => prec.left(20, seq($._expr, "-", $._expr)),
-    multiply: ($) => prec.left(30, seq($._expr, "*", $._expr)),
-    divide: ($) => prec.left(30, seq($._expr, "/", $._expr)),
+    seq: ($) => prec.left(10, seq($._expr, ";", $._expr)),
 
-    lessThan: ($) => prec.left(10, seq($._expr, "<", $._expr)),
-    moreThan: ($) => prec.left(10, seq($._expr, ">", $._expr)),
-    equals: ($) => prec.left(10, seq($._expr, "==", $._expr)),
-    notEquals: ($) => prec.left(10, seq($._expr, "!=", $._expr)),
+    or: ($) => prec.left(20, seq($._expr, "or", $._expr)),
+    and: ($) => prec.left(30, seq($._expr, "and", $._expr)),
 
-    seq: ($) => prec.left(5, seq($._expr, ";", $._expr)),
+    lessThan: ($) => prec.left(40, seq($._expr, "<", $._expr)),
+    moreThan: ($) => prec.left(40, seq($._expr, ">", $._expr)),
+    equals: ($) => prec.left(40, seq($._expr, "==", $._expr)),
+    notEquals: ($) => prec.left(40, seq($._expr, "!=", $._expr)),
+
+    add: ($) => prec.left(50, seq($._expr, "+", $._expr)),
+    subtract: ($) => prec.left(50, seq($._expr, "-", $._expr)),
+    multiply: ($) => prec.left(60, seq($._expr, "*", $._expr)),
+    divide: ($) => prec.left(60, seq($._expr, "/", $._expr)),
 
     call: ($) => prec.left(100, seq($._expr, $._expr)),
 
