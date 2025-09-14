@@ -286,6 +286,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "lessOrEqual"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "moreOrEqual"
+        },
+        {
+          "type": "SYMBOL",
           "name": "equals"
         },
         {
@@ -437,6 +445,48 @@
           {
             "type": "STRING",
             "value": ">"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "lessOrEqual": {
+      "type": "PREC_LEFT",
+      "value": 40,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": "<="
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          }
+        ]
+      }
+    },
+    "moreOrEqual": {
+      "type": "PREC_LEFT",
+      "value": 40,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_expr"
+          },
+          {
+            "type": "STRING",
+            "value": ">="
           },
           {
             "type": "SYMBOL",

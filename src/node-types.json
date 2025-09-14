@@ -64,6 +64,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -73,6 +77,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -179,6 +187,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -188,6 +200,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -304,6 +320,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -313,6 +333,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -427,6 +451,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -436,6 +464,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -574,6 +606,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -583,6 +619,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -824,6 +864,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -833,6 +877,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -939,6 +987,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -948,6 +1000,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -1054,6 +1110,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -1063,6 +1123,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -1208,6 +1272,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -1217,6 +1285,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -1326,6 +1398,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -1335,6 +1411,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -1444,6 +1524,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -1453,6 +1537,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -1578,6 +1666,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -1587,6 +1679,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -1668,6 +1764,129 @@
     }
   },
   {
+    "type": "lessOrEqual",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "and",
+          "named": true
+        },
+        {
+          "type": "boolLiteral",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "exponentiate",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "or",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "lessThan",
     "named": true,
     "fields": {},
@@ -1732,6 +1951,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -1741,6 +1964,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -1865,6 +2092,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -1874,6 +2105,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -2021,6 +2256,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -2030,6 +2269,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -2193,6 +2436,10 @@
             "named": true
           },
           {
+            "type": "lessOrEqual",
+            "named": true
+          },
+          {
             "type": "lessThan",
             "named": true
           },
@@ -2202,6 +2449,10 @@
           },
           {
             "type": "list",
+            "named": true
+          },
+          {
+            "type": "moreOrEqual",
             "named": true
           },
           {
@@ -2309,6 +2560,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -2318,6 +2573,133 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
+          "named": true
+        },
+        {
+          "type": "moreThan",
+          "named": true
+        },
+        {
+          "type": "multiply",
+          "named": true
+        },
+        {
+          "type": "negate",
+          "named": true
+        },
+        {
+          "type": "not",
+          "named": true
+        },
+        {
+          "type": "notEquals",
+          "named": true
+        },
+        {
+          "type": "or",
+          "named": true
+        },
+        {
+          "type": "seq",
+          "named": true
+        },
+        {
+          "type": "stringLiteral",
+          "named": true
+        },
+        {
+          "type": "subtract",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "moreOrEqual",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "add",
+          "named": true
+        },
+        {
+          "type": "and",
+          "named": true
+        },
+        {
+          "type": "boolLiteral",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "case",
+          "named": true
+        },
+        {
+          "type": "charLiteral",
+          "named": true
+        },
+        {
+          "type": "divide",
+          "named": true
+        },
+        {
+          "type": "equals",
+          "named": true
+        },
+        {
+          "type": "exponentiate",
+          "named": true
+        },
+        {
+          "type": "floatLiteral",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "intLiteral",
+          "named": true
+        },
+        {
+          "type": "lambda",
+          "named": true
+        },
+        {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
+          "type": "lessThan",
+          "named": true
+        },
+        {
+          "type": "letExpr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -2424,6 +2806,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -2433,6 +2819,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -2539,6 +2929,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -2548,6 +2942,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -2654,6 +3052,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -2663,6 +3065,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -2769,6 +3175,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -2778,6 +3188,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -2884,6 +3298,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -2893,6 +3311,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -2999,6 +3421,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -3008,6 +3434,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -3114,6 +3544,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -3123,6 +3557,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -3268,6 +3706,10 @@
           "named": true
         },
         {
+          "type": "lessOrEqual",
+          "named": true
+        },
+        {
           "type": "lessThan",
           "named": true
         },
@@ -3277,6 +3719,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "moreOrEqual",
           "named": true
         },
         {
@@ -3410,6 +3856,10 @@
     "named": false
   },
   {
+    "type": "<=",
+    "named": false
+  },
+  {
     "type": "=",
     "named": false
   },
@@ -3423,6 +3873,10 @@
   },
   {
     "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
     "named": false
   },
   {

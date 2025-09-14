@@ -9,4 +9,10 @@
 (lambda
   argument: (identifier) @local.definition) @local.scope
 
+(constructor
+  (identifier) @definition)
+
+(caseBody
+  captures: (identifier)+ @local.definition) @local.scope
+
 (identifier) @local.reference

@@ -51,7 +51,16 @@
   "tree-sitter": [
     {
       "scope": "source.imp",
-      "injection-regex": "^imp$"
+      "file-types": [
+        "imp"
+      ],
+      "injection-regex": "^imp$",
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "locals": [
+        "queries/locals.scm"
+      ]
     }
   ]
 }

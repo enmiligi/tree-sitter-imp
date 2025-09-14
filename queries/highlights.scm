@@ -5,6 +5,9 @@
   "if"
   "then"
   "else"
+  "type"
+  "case"
+  "of"
 ] @keyword
 [
   "="
@@ -14,6 +17,8 @@
   "/"
   "<"
   ">"
+  "<="
+  ">="
   "!"
   "=="
   "!="
@@ -39,7 +44,7 @@
 ] @string
 (identifier) @variable
 (lambda
-  argument: (identifier) @variable.parameter)
+  argument: (identifier) @parameter)
 
 (letExpr
   name: (identifier) @function
@@ -48,3 +53,23 @@
 (letStatement
   name: (identifier) @function
   value: (lambda))
+
+(letExpr
+  type: (_) @type)
+
+(letStatement
+  type: (_) @type)
+
+(typeStatement
+  (typeName) @type)
+
+(typeStatement
+  (typeVar) @type)
+
+(constructor
+  (identifier) @function
+  (_)+ @type)
+
+(caseBody
+  constructor: (_) @function
+  captures: (_))

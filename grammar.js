@@ -19,7 +19,7 @@ export default grammar({
     source_file: ($) =>
       seq(
         optional($._statement),
-        repeat(seq($._newStatement, optional($._statement))),
+        repeat(seq($._newStatement, optional($._statement)))
       ),
 
     _statement: ($) => choice($.letStatement, $.typeStatement),
@@ -30,7 +30,7 @@ export default grammar({
         field("name", $.identifier),
         optional(seq(":", field("type", $._constrainedType))),
         "=",
-        field("value", $._expr),
+        field("value", $._expr)
       ),
 
     typeStatement: ($) =>
@@ -40,7 +40,7 @@ export default grammar({
         repeat($.typeVar),
         "=",
         $.constructor,
-        repeat(seq("|", $.constructor)),
+        repeat(seq("|", $.constructor))
       ),
 
     constructor: ($) =>
@@ -48,10 +48,8 @@ export default grammar({
         100,
         seq(
           $.identifier,
-          repeat(
-            choice($._bracketedType, $.typeVar, $.typeName, $.builtinType),
-          ),
-        ),
+          repeat(choice($._bracketedType, $.typeVar, $.typeName, $.builtinType))
+        )
       ),
 
     _expr: ($) => choice($.negate, $._nonNegateExpr),
@@ -77,13 +75,15 @@ export default grammar({
         $.divide,
         $.lessThan,
         $.moreThan,
+        $.lessOrEqual,
+        $.moreOrEqual,
         $.equals,
         $.notEquals,
         $.seq,
         $.case,
         $.or,
         $.and,
-        $.exponentiate,
+        $.exponentiate
       ),
 
     not: ($) => seq("!", $._expr),
@@ -96,6 +96,8 @@ export default grammar({
 
     lessThan: ($) => prec.left(40, seq($._expr, "<", $._expr)),
     moreThan: ($) => prec.left(40, seq($._expr, ">", $._expr)),
+    lessOrEqual: ($) => prec.left(40, seq($._expr, "<=", $._expr)),
+    moreOrEqual: ($) => prec.left(40, seq($._expr, ">=", $._expr)),
     equals: ($) => prec.left(40, seq($._expr, "==", $._expr)),
     notEquals: ($) => prec.left(40, seq($._expr, "!=", $._expr)),
 
@@ -118,7 +120,7 @@ export default grammar({
         "=",
         field("value", $._expr),
         "in",
-        field("result", $._expr),
+        field("result", $._expr)
       ),
 
     lambda: ($) =>
@@ -127,7 +129,7 @@ export default grammar({
         field("argument", $.identifier),
         optional(seq(":", field("type", $._constrainedType))),
         ".",
-        field("body", $._expr),
+        field("body", $._expr)
       ),
 
     if: ($) =>
@@ -137,7 +139,7 @@ export default grammar({
         "then",
         field("then", $._expr),
         "else",
-        field("else", $._expr),
+        field("else", $._expr)
       ),
 
     case: ($) =>
@@ -147,22 +149,22 @@ export default grammar({
           field("value", $._expr),
           "of",
           $.caseBody,
-          repeat(seq("|", $.caseBody)),
-        ),
+          repeat(seq("|", $.caseBody))
+        )
       ),
     caseBody: ($) =>
       seq(
         field("constructor", $.identifier),
         field("captures", repeat($.identifier)),
         "=>",
-        $._expr,
+        $._expr
       ),
 
     list: ($) =>
       seq(
         "[",
         optional(seq($._expr, repeat(seq(",", $._expr)), optional(","))),
-        "]",
+        "]"
       ),
 
     boolLiteral: ($) => choice("True", "False"),
@@ -184,7 +186,7 @@ export default grammar({
         repeat(seq(",", $.constraint)),
         optional(","),
         "=>",
-        $._type,
+        $._type
       ),
     constraint: ($) => seq("Number", $.typeVar),
 
@@ -195,7 +197,7 @@ export default grammar({
         $.functionType,
         $.typeVar,
         $.typeName,
-        $._bracketedType,
+        $._bracketedType
       ),
 
     _bracketedType: ($) => seq("(", $._type, ")"),
